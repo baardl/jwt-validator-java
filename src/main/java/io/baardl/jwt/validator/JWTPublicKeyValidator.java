@@ -1,5 +1,6 @@
 package io.baardl.jwt.validator;
 
+import org.jose4j.jwk.JsonWebKey;
 import org.jose4j.jwk.JsonWebKeySet;
 import org.jose4j.lang.JoseException;
 import org.slf4j.Logger;
@@ -40,6 +41,14 @@ public class JWTPublicKeyValidator {
             log.debug("Failed to build jwks from {}, reason: {}", jwksJson, e.getMessage());
         }
         return jwks;
+    }
+
+    public JsonWebKey findKeyById(String keyId, String keyType, String use, String algorithm) {
+        JsonWebKey key = null;
+        if (jwks != null) {
+            key = jwks.findJsonWebKey(keyId, keyType, use, algorithm);
+        }
+        return key;
     }
 
     public String getJwksJson() {
