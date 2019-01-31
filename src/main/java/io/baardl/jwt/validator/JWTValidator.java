@@ -83,7 +83,7 @@ public class JWTValidator {
                 .setAllowedClockSkewInSeconds(30) // allow some leeway in validating time based claims to account for clock skew
                 .setRequireSubject() // the JWT must have a subject claim
                 .setVerificationKey(key) // verify the signature with the public key
-                .setExpectedAudience(false, "")
+                .setExpectedAudience(false, "1bca8d5d-3949-4e5e-a886-52710c6193ee")
                 .setJwsAlgorithmConstraints( // only allow the expected signature algorithm(s) in the given context
                         new AlgorithmConstraints(AlgorithmConstraints.ConstraintType.WHITELIST, // which is only RS256 here
                                 AlgorithmIdentifiers.RSA_USING_SHA256))

@@ -24,6 +24,12 @@
       <artifactId>jose4j</artifactId>
       <version>0.6.5</version>
     </dependency>
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>nimbus-jose-jwt</artifactId>
+      <version>6.7</version>
+    </dependency>
+
 
     <!--Config-->
     <dependency>
