@@ -9,6 +9,8 @@ import org.jose4j.jws.JsonWebSignature;
 import org.jose4j.lang.JoseException;
 import org.slf4j.Logger;
 
+import java.security.Key;
+
 import static org.slf4j.LoggerFactory.getLogger;
 
 public class JWTPayloadVerified {
@@ -41,7 +43,8 @@ public class JWTPayloadVerified {
             JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
 
             // The verification key on the JWS is the public key from the JWK we pulled from the JWK Set.
-            jws.setKey(jwk.getKey());
+            Key publicKey = jwk.getKey();
+            jws.setKey(publicKey);
 
             boolean isValid = jws.verifySignature();
 

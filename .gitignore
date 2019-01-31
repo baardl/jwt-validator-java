@@ -23,4 +23,4 @@ dependency-reduced-pom.xml
 
 logback-override.xml
 
-spa-keystore.jwks
+jwtValidation_override.properties

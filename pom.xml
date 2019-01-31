@@ -25,6 +25,13 @@
       <version>0.6.5</version>
     </dependency>
 
+    <!--Config-->
+    <dependency>
+      <groupId>org.constretto</groupId>
+      <artifactId>constretto-core</artifactId>
+      <version>2.2.3</version>
+    </dependency>
+
     <!-- Logging -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
